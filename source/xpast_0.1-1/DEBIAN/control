@@ -1,0 +1,12 @@
+Package: xpast
+Version: 0.1-1
+Section: base
+Installed-Size: 9
+Priority: optional
+Architecture: all
+Homepage: <https://github.com/xtoolkit/xpast>
+Maintainer: Mehdi HosseinZade <arshen@outlook.com>
+Description: xpast: a open source custom pastebinit
+ config file location: /etc/xpast.conf
+ small program!
+

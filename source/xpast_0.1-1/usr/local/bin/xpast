@@ -1,0 +1,37 @@
+#!/bin/bash
+#####################################################################
+#
+# Copyright (c) 2016 vdev.ir
+# Homepage: <https://github.com/xtoolkit/xpast>
+# Maintainer: Mehdi HosseinZade <arshen@outlook.com>
+#
+######################################################################
+CONFIGFILE=/etc/xpast.conf
+MSG=`cat`
+function usage
+{
+	if [ -n "$1" ]; then echo $1; fi
+	echo "Usage: xpast [-m your_api_url] [-p password]"
+	exit 1
+}
+while getopts ":p:m:h" opt; do
+	case "$opt" in
+		p) MY_PASSWORD=$OPTARG ;;
+		m) MY_HOST=$OPTARG ;;
+		h) echo "help"; usage ;;
+		*) echo "Unknown param: $opt"; usage ;;
+	esac
+done
+if [ -n "$CONFIGFILE" ]; then . "$CONFIGFILE"; fi;
+if [ -z "$MY_PASSWORD" ]; then S_PASSWORD="$D_PASSWORD";
+else S_PASSWORD="$MY_PASSWORD";
+fi;
+if [ -z "$MY_HOST" ]; then S_HOST="$D_HOST";
+else S_HOST="$MY_HOST";
+fi;
+if [ -z "$MSG" ]; then usage "Not found text"; fi;
+RESPONSE=`curl -fSs -d "password=$S_PASSWORD" -d "body=$MSG" "$S_HOST" 2>&1`
+if [ $? -gt 0 ]; then echo "Failed upload your text in $S_HOST;"
+else echo "$RESPONSE"
+fi
+exit 1
