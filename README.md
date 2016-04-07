@@ -9,7 +9,7 @@ open termian az superuser and write...
   <li>cp source</li>
   <li>sudo nano xpast_0.1-1/etc/xpast.conf -> edit for you -> ctrl+x -> y -> enter</li>
   <li>sudo nano xpast_0.1-1/DEBIAN/control -> edit for you -> ctrl+x -> y -> enter</li>
-  <li>dpkg-deb --build xpast_0.1-1 dpkg-deb --build xpast_0.1-1</li>
+  <li>dpkg-deb --build xpast_0.1-1</li>
   <li>and final copy "xpast_0.1-1.deb"</li>
   <li>end :)</li>
 </ol>
