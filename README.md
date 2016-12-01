@@ -1,8 +1,10 @@
 # xpast
+
 a simple open source pastebinit without nc
 Usage: `xpast [-m your_api_url] [-p password]`
 
 ## How make a custom xpast.deb?
+
 open termian az superuser and write...
 
 1. `git clone https://github.com/xtoolkit/xpast.git`
@@ -14,11 +16,13 @@ open termian az superuser and write...
 7. end :)
 
 ## Config your host
+
 it's simple :)
 upload api.php and index.php in your host.
 if set password for uploads open "api.php" and set your password in line 2
 
 ## Demo & Examples
+
 you can install my [xpast_0.1-1.deb](https://github.com/xtoolkit/xpast/blob/master/xpast_0.1-1.deb?raw=true) and write examples in terminal:
 
 - `dmesg | xpast`
